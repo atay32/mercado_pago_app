@@ -19,9 +19,9 @@ export default function Navigation() {
       screenOptions={({ route }) => ({
         headerShown: false,
         headerTitle: "",
-        tabBarActiveTintColor: "#009ee3",
-        tabBarInactiveTintColor: "#434242",
-        tabBarLabelStyle: { fontSize: 12 },
+        tabBarActiveTintColor: "#3F43E8",
+        tabBarInactiveTintColor: "#1d1d2b",
+        tabBarLabelStyle: { fontSize: 12, fontWeight: "600" },
         tabBarStyle: styles.barStyles,
         tabBarIcon: ({ color }) => {
           let iconName: string | any = "";
