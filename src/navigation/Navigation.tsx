@@ -48,13 +48,13 @@ export default function Navigation() {
       <Tab.Screen
         name="HomeScreen"
         component={HomeScreen}
-        options={{ title: "Inicio" }}
+        options={{ title: "Cuenta" }}
       />
       <Tab.Screen
         name="ActivityScreen"
         component={ActivityScreen}
         options={{
-          title: "Actividad",
+          title: "Tarjetas",
           tabBarItemStyle: { marginRight: 30 },
         }}
       />
@@ -74,9 +74,8 @@ export default function Navigation() {
         name="NotificationsScreen"
         component={NotificationsScreen}
         options={{
-          title: "Notificaciones",
+          title: "Servicios",
           tabBarItemStyle: { marginLeft: 30 },
-          tabBarLabelStyle: { fontSize: width <= 360 ? 11 : 12 },
         }}
       />
       <Tab.Screen
@@ -90,23 +89,25 @@ export default function Navigation() {
 
 const styles = StyleSheet.create({
   barStyles: {
-    elevation: 0,
+    elevation: 8,
     borderTopWidth: 0,
     position: "absolute",
-    height: 60,
+    height: 70,
     paddingBottom: 10,
-    backgroundColor: "#fff",
+    backgroundColor: "#fff",    
+    borderTopLeftRadius: 28,
+    borderTopRightRadius: 28,
   },
   barItemQR: {
-    backgroundColor: "#009ee3",
+    backgroundColor: "#3F43E8",
     position: "absolute",
-    width: 60,
-    height: 60,
-    left: width / 2 - 30,
-    borderRadius: 30,
-    bottom: -3,
+    width: 68,
+    height: 68,
+    left: width / 2 - 34,
+    borderRadius: 34,
+    bottom: 8,
     zIndex: 1,
-    borderWidth: 5,
+    borderWidth: 0,
     borderColor: "#ECF9FF",
   },
   barIconQR: {
