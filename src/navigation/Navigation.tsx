@@ -28,13 +28,13 @@ export default function Navigation() {
 
           switch (route.name) {
             case "HomeScreen":
-              iconName = "home-outline";
+              iconName = "business-outline";
               break;
             case "ActivityScreen":
               iconName = "card-outline";
               break;
             case "NotificationsScreen":
-              iconName = "notifications-outline";
+              iconName = "phone-portrait-outline";
               break;
             case "MoreScreen":
               iconName = "menu-outline";
