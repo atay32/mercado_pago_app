@@ -12,7 +12,7 @@ export default function HomeScreen() {
   return (
     <>
       <View>
-        <StatusBar backgroundColor="#009ee3" />
+        <StatusBar backgroundColor="#FFE600" />
         <HeaderHome />
       </View>
       <ScrollView showsVerticalScrollIndicator={false} style={{ flex: 1 }}>
