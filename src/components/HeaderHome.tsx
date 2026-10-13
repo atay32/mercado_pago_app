@@ -1,103 +1,54 @@
 import React from "react";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 import Icon from "@expo/vector-icons/Ionicons";
+import MCIcon from "@expo/vector-icons/MaterialCommunityIcons";
+
+const NAME = "Luciano";
 
 export default function HeaderHome() {
+  const insets = useSafeAreaInsets();
   return (
-    <View style={styles.container}>
-      <View style={styles.wrapItems}>
-        <View style={styles.wrapAvatar}>
-          <Icon name="person-outline" size={18} color="#fff" />
-          <View style={styles.containerNumber}>
-            <Text style={styles.number}>2</Text>
-          </View>
-        </View>
-        <Text style={styles.name}>Hola marcelo</Text>
-        <Icon
-          name="chevron-forward-outline"
-          size={16}
-          style={styles.iconArrow}
-        />
+    <View style={[styles.container, { paddingTop: insets.top + 4 }]}>
+      <View style={styles.logo}>
+        <MCIcon name="handshake" size={18} color="#2d6cdf" />
       </View>
-      <View style={styles.wrapItems}>
-        <TouchableOpacity style={styles.wrapIconQuestion} activeOpacity={0.8}>
-          <Icon name="help-circle-outline" size={20} color="#fff" />
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.wrapCVU} activeOpacity={0.8}>
-          <Text style={styles.cvu}>Tu CVU</Text>
-        </TouchableOpacity>
-      </View>
+      <Text style={styles.name}>Hola, {NAME}</Text>
+      <TouchableOpacity style={styles.btn} activeOpacity={0.8}>
+        <Icon name="search-outline" size={22} color="#1d1d2b" />
+      </TouchableOpacity>
+      <TouchableOpacity style={[styles.btn, { marginLeft: 8 }]} activeOpacity={0.8}>
+        <Icon name="notifications-outline" size={22} color="#1d1d2b" />
+      </TouchableOpacity>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#009ee3",
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-    paddingVertical: 22,
-    paddingHorizontal: 14,
-    zIndex: 1,
-  },
-  wrapItems: {
+    backgroundColor: "#FFE600",
     flexDirection: "row",
     alignItems: "center",
+    paddingHorizontal: 16,
+    paddingBottom: 14,
   },
-  wrapAvatar: {
-    backgroundColor: "#32b3ff",
-    height: 30,
+  logo: {
     width: 30,
-    justifyContent: "center",
-    alignItems: "center",
+    height: 30,
     borderRadius: 15,
-  },
-  containerNumber: {
-    position: "absolute",
-    width: 16,
-    height: 16,
     backgroundColor: "#fff",
-    borderRadius: 8,
+    borderWidth: 1.5,
+    borderColor: "#1a2a8f",
+    justifyContent: "center",
     alignItems: "center",
-    top: 16,
-    left: 16,
   },
-  number: {
-    fontSize: 12,
-    fontWeight: "bold",
-    color: "#00a650",
-  },
-  name: {
-    color: "#fff",
-    fontWeight: "700",
-    letterSpacing: 0.5,
-    fontSize: 15,
-    marginLeft: 10,
-  },
-  iconArrow: {
-    color: "#fff",
-    top: 1,
-    marginLeft: 3,
-  },
-  wrapIconQuestion: {
-    backgroundColor: "#32b3ff",
-    paddingHorizontal: 6,
-    borderRadius: 4,
-    marginRight: 10,
-    height: 25,
+  name: { flex: 1, marginLeft: 12, fontSize: 20, fontWeight: "700", color: "#1d1d2b" },
+  btn: {
+    width: 40,
+    height: 40,
+    borderRadius: 13,
+    backgroundColor: "#FFF4A6",
     justifyContent: "center",
-  },
-  wrapCVU: {
-    backgroundColor: "#32b3ff",
-    paddingHorizontal: 6,
-    borderRadius: 4,
-    height: 25,
-    justifyContent: "center",
-  },
-  cvu: {
-    color: "#fff",
-    fontWeight: "bold",
-    fontSize: 13,
+    alignItems: "center",
   },
 });
